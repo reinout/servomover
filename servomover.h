@@ -29,7 +29,6 @@ class LinearServoMover
   bool to_min;
   bool done;
 
-
   Servo servo;
   void move_servo();
 };
