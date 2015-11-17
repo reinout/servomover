@@ -33,16 +33,21 @@ void LinearServoMover::move_servo(){
     done = true;
   }
   servo.writeMicroseconds(current_position);
+  if (done) {
+    servo.detach();
+  }
 }
 
 void LinearServoMover::move_to_min(){
   to_min = true;
   done = false;
+  servo.attach(pin);
 }
 
 void LinearServoMover::move_to_max(){
   to_min = false;
   done = false;
+  servo.attach(pin);
 }
 
 void LinearServoMover::perhaps_update(){
