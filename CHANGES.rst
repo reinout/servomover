@@ -9,6 +9,10 @@ Changelog for servomover
   dithering.
   [reinout]
 
+- Note: this is a fully working version. I can steer a german hp0/hp1/hp2
+  signals with two servos with this library!
+  [reinout]
+
 
 0.1 (2015-11-17)
 ----------------
