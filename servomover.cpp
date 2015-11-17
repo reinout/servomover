@@ -38,13 +38,11 @@ void LinearServoMover::move_servo(){
 void LinearServoMover::move_to_min(){
   to_min = true;
   done = false;
-  return;
 }
 
 void LinearServoMover::move_to_max(){
   to_min = false;
   done = false;
-  return;
 }
 
 void LinearServoMover::perhaps_update(){
