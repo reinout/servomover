@@ -1,7 +1,7 @@
 Changelog for servomover
 ========================
 
-0.1 (unreleased)
+0.1 (2015-11-17)
 ----------------
 
 - Started the library. Quite some inspiration was taken from
