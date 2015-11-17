@@ -10,3 +10,6 @@ Changelog for servomover
 
 - Got the first version working. Had to learn c++ in the process.
   [reinout]
+
+- Added usage documentation in the README.
+  [reinout]
