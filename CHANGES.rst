@@ -4,7 +4,10 @@ Changelog for servomover
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Servo now gets 20 milliseconds to reach the initial position before the
+  servo is detached. This way I get the fixed initial position *without* any
+  dithering.
+  [reinout]
 
 
 0.1 (2015-11-17)

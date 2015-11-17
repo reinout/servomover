@@ -23,7 +23,8 @@ LinearServoMover::LinearServoMover(int pin,
 void LinearServoMover::init(){
   movement_per_period = (max_position - min_position) * PERIOD / duration;
   servo.attach(pin);
-  move_servo();
+  servo.writeMicroseconds(current_position);
+  next_update = millis() + PERIOD;
 }
 
 void LinearServoMover::move_servo(){
