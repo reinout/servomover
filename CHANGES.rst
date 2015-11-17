@@ -1,7 +1,7 @@
 Changelog for servomover
 ========================
 
-0.2 (unreleased)
+0.2 (2015-11-17)
 ----------------
 
 - Servo now gets 20 milliseconds to reach the initial position before the
