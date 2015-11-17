@@ -1,8 +1,12 @@
 Servo mover library
 ===================
 
-Arduino library to move servo's (slowly). It wraps the standard servo library
+Arduino library to move servo's (slowly) with a linear movement. It wraps the
+standard servo library.
 
+Note: later on I might add other kinds of movement by adding more classes. And
+I might switch my naming style. Currently it is python-inspired as I'm used to
+it...
 
 Usage::
 
@@ -16,7 +20,7 @@ Usage::
     upper_arm.init();
     upper_arm.move_to_max();
     lower_arm.move_to_max();
-  }
+   }
 
   void loop() {
     upper_arm.perhaps_update();
