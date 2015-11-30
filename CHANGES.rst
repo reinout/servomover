@@ -4,7 +4,8 @@ Changelog for servomover
 0.3 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added signal wrapping class for signals with one arm.
+  [reinout]
 
 
 0.2 (2015-11-17)
