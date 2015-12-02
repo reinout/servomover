@@ -28,11 +28,11 @@ void LinearServoMover::init(){
 }
 
 void LinearServoMover::move_servo(){
-  if (current_position < min_position) {
+  if (current_position <= min_position) {
     current_position = min_position;
     done = true;
   }
-  if (current_position > max_position) {
+  if (current_position >= max_position) {
     current_position = max_position;
     done = true;
   }
