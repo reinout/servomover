@@ -92,3 +92,6 @@ This way you only need one wire for a hp0/hp1 signal and two for a hp0/hp1/hp2
 signal. The hp0 ("stop) state is the default when the signal is in rest. hp1
 or hp2 are deliberately switched. Advantage of steering a signal with an
 arduino!
+
+**TODO**: perhaps I need to adjust the wording. "Button" might not be the best
+name as it suggest a push button that sends a pulse.
