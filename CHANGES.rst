@@ -4,7 +4,12 @@ Changelog for servomover
 0.3 (unreleased)
 ----------------
 
-- Added signal wrapping class for signals with one arm.
+- Added signal wrapping class for signals with one arm and also one for two
+  arms.
+  [reinout]
+
+- The servo is reliably detached also in the initial state. Previously, the
+  servo would stay attached until after the first movement.
   [reinout]
 
 
