@@ -1,6 +1,12 @@
 Changelog for servomover
 ========================
 
+0.4 (unreleased)
+----------------
+
+- Nothing changed yet.
+
+
 0.3 (2015-12-02)
 ----------------
 
