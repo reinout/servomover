@@ -95,3 +95,54 @@ arduino!
 
 **TODO**: perhaps I need to adjust the wording. "Button" might not be the best
 name as it suggest a push button that sends a pulse.
+
+
+Pulse mover
+------------
+
+Usage::
+
+  #include <servomover.h>  /* Only for automatic library detection */
+  #include <Servo.h>  /* Only for automatic library detection */
+  #include <pulsemover.h>
+  #include <Bounce2.h>
+
+  int MAIN_BASE = 7;
+  int MAIN_ACTUATED = 8;
+  int HP1_BUTTON_PIN = 2;
+
+  PulseMover upper_arm = PulseMover(MAIN_BASE, MAIN_ACTUATED);
+
+  void setup() {
+    hp1_button.attach(HP1_BUTTON_PIN, INPUT_PULLUP);
+    hp1_button.interval(20);
+    upper_arm.init();
+   }
+
+  void loop() {
+    hp1_button.update();
+    if (hp1_button.fell() ) {
+      /* fell = pulled to ground, which means activated */
+      upper_arm.move_to_actuated();
+    }
+    if (hp1_button.rose() ) {
+      /* Back to default */
+      upper_arm.move_to_base();
+    }
+    upper_arm.perhaps_update();
+  }
+
+You need to instantiate the ``PulseMover`` class with
+
+- pin number for connection that, when made positive, swiches on a
+  MOSFET/transistor that gives power to the magnet that pulls the arm to the
+  base position.
+
+- Similarly pin number for the actuated position.
+
+Then, call ``.init()`` on it and make sure the loop hits ``.perhaps_update()``
+
+Afterwards you can call ``.move_to_base()`` or ``.move_to_actuated()`` to move
+to those positions.
+
+Note: the pulse duration is currently hardcoded to 1 second.
