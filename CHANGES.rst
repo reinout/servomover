@@ -4,7 +4,10 @@ Changelog for servomover
 0.4 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Added 'pulsemover' for steering with pulses, for instance for viessmann
+  slow-moving magnet-based signals. Also useful for cheap conrad switch motors
+  later on.
+  [reinout]
 
 
 0.3 (2015-12-02)
