@@ -1,5 +1,5 @@
 #ifndef signalmover_h
-# define signalmover_h
+#define signalmover_h
 
 #include <arduino.h>
 #include <Bounce2.h>
