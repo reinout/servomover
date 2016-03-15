@@ -1,7 +1,7 @@
 Changelog for servomover
 ========================
 
-0.4 (unreleased)
+0.4 (2016-03-16)
 ----------------
 
 - Added 'pulsemover' for steering with pulses, for instance for viessmann
