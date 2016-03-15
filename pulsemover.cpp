@@ -2,8 +2,6 @@
 #include "pulsemover.h"
 
 int DURATION = 1000;  // Pulse should be given for one second.
-/* int BASE = 1; */
-/* int ACTUATED = 2; */
 
 PulseMover::PulseMover(int pin_base,
                        int pin_actuated){
