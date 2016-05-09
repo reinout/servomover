@@ -92,8 +92,14 @@ void SwitchMover::init() {
   pinMode(relais_pin, OUTPUT);
   button.interval(20);
   switch_servo->init();
-  // HIGH is the rest state for a relais board.
-  digitalWrite(relais_pin, HIGH);
+  button.update();
+  // TODO: add this update/read to the signals, too
+  if (button.read() == HIGH) {
+    digitalWrite(relais_pin, HIGH);
+  }
+  else {
+    digitalWrite(relais_pin, LOW);
+  }
 }
 
 void SwitchMover::perhaps_update() {
