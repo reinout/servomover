@@ -76,3 +76,35 @@ void DualSignalMover::perhaps_update() {
   upper_arm->perhaps_update();
   lower_arm->perhaps_update();
 }
+
+
+SwitchMover::SwitchMover(LinearServoMover *switch_servo,
+                         int button_pin,
+                         int relais_pin) {
+  SwitchMover::button = Bounce();
+  SwitchMover::button_pin = button_pin;
+  SwitchMover::relais_pin = relais_pin;
+  SwitchMover::switch_servo = switch_servo;
+}
+
+void SwitchMover::init() {
+  button.attach(button_pin, INPUT_PULLUP);
+  pinMode(relais_pin, OUTPUT);
+  button.interval(20);
+  switch_servo->init();
+  // HIGH is the rest state for a relais board.
+  digitalWrite(relais_pin, HIGH);
+}
+
+void SwitchMover::perhaps_update() {
+  button.update();
+  if (button.rose() ) {
+    switch_servo->move_to_min();
+    digitalWrite(relais_pin, HIGH);
+  }
+  if (button.fell() ) {
+    switch_servo->move_to_max();
+    digitalWrite(relais_pin, LOW);
+  }
+  switch_servo->perhaps_update();
+}
