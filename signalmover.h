@@ -40,4 +40,21 @@ class DualSignalMover
   LinearServoMover *lower_arm;
 };
 
+
+class SwitchMover
+{
+ public:
+  SwitchMover(LinearServoMover *switch_servo,
+              int button_pin,
+              int relais_pin);
+  void init();
+  void perhaps_update();
+
+ private:
+  Bounce button;
+  int button_pin;
+  int relais_pin;
+  LinearServoMover *switch_servo;
+};
+
 #endif
